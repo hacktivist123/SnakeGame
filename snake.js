@@ -47,7 +47,7 @@ function draw() {
 
     // draw stroke on the snake head
     ctx.strokeStyle = 'red';
-    ctx.StrokeRect(snake[i].x, snake[i].y, box, box);
+    ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
 }
 
