@@ -10,7 +10,7 @@ const box = 32;
 const background = new Image();
 background.src = 'img/ground.png';
 
-const background = new Image();
+const foodImg = new Image();
 background.src = 'img/ground.png';
 
 // Create the snake with index position
@@ -36,7 +36,17 @@ let score = 0;
 // Create the draw function which will draw everything unto our canvas
 
 function draw() {
-  ctx.drawImage(ground, 0, 0);
+  ctx.drawImage(background, 0, 0);
+
+  // loop over the snake to draw all the cells
+
+  for (let i = 0; i < snake.length; i++) {
+    ctx.fillStyle = i == 0 ? 'green' : 'white';
+    ctx.fillRect(snake[i].x, snake[i].y, box, box);
+
+    ctx.strokeStyle = 'red';
+    ctx.fillRect(snake[i].x, snake[i].y, box, box);
+  }
 }
 
 // call draw function every 100 ms
