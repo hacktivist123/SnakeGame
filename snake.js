@@ -49,6 +49,11 @@ function draw() {
 
   //draw the food
   ctx.drawImage(foodImg, food.x, food.y);
+
+  //draw score
+  ctx.fillStyle = "white";
+  ctx.font = "45px Changa one";
+  ctx.fillText(score, 2 * box, 1.6 * box);
 }
 
 // call draw function every 100 ms
