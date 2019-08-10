@@ -4,7 +4,7 @@ This is a Snake Game built with HTML5 canvas and Javascript for my Technical Wor
 
 _**TODO**_
 
-- [ ] change background image from PNG to SVG for faster load
+- [ ] Change background image from PNG to SVG for faster load
 - [ ] Game should automatically refresh when game over
 - [ ] Pause Game feature
 - [ ] Reduce/Increase speeds feature
