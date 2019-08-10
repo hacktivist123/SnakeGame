@@ -11,7 +11,7 @@ const background = new Image();
 background.src = 'img/ground.png';
 
 const foodImg = new Image();
-background.src = 'img/ground.png';
+foodImg.src = 'img/food.png';
 
 // Create the snake with index position
 
@@ -23,18 +23,15 @@ snake[0] = {
 };
 
 // create the food with their X and Y positions
-
 let food = {
   x: Math.floor(Math.random() * 17 + 1) * box,
-  x: Math.floor(Math.random() * 17 + 1) * box
+  y: Math.floor(Math.random() * 15 + 3) * box
 };
 
 // create the score variable
-
 let score = 0;
 
 // Create the draw function which will draw everything unto our canvas
-
 function draw() {
   ctx.drawImage(background, 0, 0);
 
@@ -49,8 +46,10 @@ function draw() {
     ctx.strokeStyle = 'red';
     ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
+
+  //draw the food
+  ctx.drawImage(foodImg, food.x, food.y);
 }
 
 // call draw function every 100 ms
-
 let game = setInterval(draw, 100);
