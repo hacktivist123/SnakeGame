@@ -56,6 +56,7 @@ function draw() {
   // loop over the snake to draw all the cells
 
   for (let i = 0; i < snake.length; i++) {
+
     //snake head style
     ctx.fillStyle = i == 0 ? 'green' : 'white';
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
@@ -67,6 +68,19 @@ function draw() {
 
   //draw the food
   ctx.drawImage(foodImg, food.x, food.y);
+
+  //old head position
+  let snakeX = snake[0].x;
+  let snakeY = snake[0].y;
+
+  //remove the tail
+  snake.pop();
+
+  //determine which DIRECTION is pressed
+  if (d = "LEFT") snakeX -= box;
+  if (d = "UP") snakeY -= box;
+  if (d = "RIGHT") snakeX += box;
+  if (d = "DOWN") snakeY += box;
 
   //draw score
   ctx.fillStyle = "white";
