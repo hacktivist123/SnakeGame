@@ -38,3 +38,7 @@ let score = 0;
 function draw() {
   ctx.drawImage(ground, 0, 0);
 }
+
+// call draw function every 100 ms
+
+let game = setInterval(draw, 100);
