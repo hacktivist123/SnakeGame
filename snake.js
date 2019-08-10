@@ -41,11 +41,13 @@ function draw() {
   // loop over the snake to draw all the cells
 
   for (let i = 0; i < snake.length; i++) {
+    //snake head style
     ctx.fillStyle = i == 0 ? 'green' : 'white';
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
+    // draw stroke on the snake head
     ctx.strokeStyle = 'red';
-    ctx.fillRect(snake[i].x, snake[i].y, box, box);
+    ctx.StrokeRect(snake[i].x, snake[i].y, box, box);
   }
 }
 
