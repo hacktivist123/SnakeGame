@@ -43,7 +43,7 @@ function direction(event) {
     d = "UP"
   } else if (event.keyCode == 39) {
     d = "RIGHT"
-  } else if (event.keycode == 40) {
+  } else if (event.keyCode === 40) {
     d = "DOWN"
   }
 }
@@ -77,10 +77,19 @@ function draw() {
   snake.pop();
 
   //determine which DIRECTION is pressed
-  if (d = "LEFT") snakeX -= box;
-  if (d = "UP") snakeY -= box;
-  if (d = "RIGHT") snakeX += box;
-  if (d = "DOWN") snakeY += box;
+  if (d == "LEFT") snakeX -= box;
+  if (d == "UP") snakeY -= box;
+  if (d == "RIGHT") snakeX += box;
+  if (d == "DOWN") snakeY += box;
+
+  //add new Head
+
+  let newHead = {
+    x: snakeX,
+    y: snakeY
+  }
+
+  snake.unshift(newHead);
 
   //draw score
   ctx.fillStyle = "white";
