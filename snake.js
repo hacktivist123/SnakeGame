@@ -74,6 +74,7 @@ function direction(event) {
 function collision(head, array) {
   for (let i = 0; i < array.length; i++) {
     if (head.x == array[i].x && head.y == array[i].y) {
+      dead.play();
       return true;
     }
   }
@@ -145,4 +146,4 @@ function draw() {
 }
 
 // call draw function every 100 ms
-let game = setInterval(draw, 100);
+let game = setInterval(draw, 140);
