@@ -1,3 +1,9 @@
+// This is section is created by Taiwo Emmanuel +2348127984099, https://github.com/taiwoemmanuel/ 
+//Get the message contents
+let messageBox = document.getElementById('message-box');
+let retry_yes = document.getElementById('retry_yes');
+let retry_no = document.getElementById('retry_no');
+
 // Create Canvas Constant and a context constant
 const cvs = document.getElementById('snake');
 const ctx = cvs.getContext('2d');
@@ -135,7 +141,21 @@ function draw() {
   if (snakeX < box || snakeX > 17 * box || snakeY < 3 * box || snakeY > 17 * box || collision(newHead, snake)) {
     clearInterval(game);
     dead.play();
+        // This is section is created by Taiwo Emmanuel +2348127984099, https://github.com/taiwoemmanuel/ 
+        messageBox.style.display = 'flex';
   }
+
+  // This is section is created by Taiwo Emmanuel +2348127984099, https://github.com/taiwoemmanuel/ 
+  retry_yes.addEventListener('click', () => {
+    window.location.reload()
+  })
+
+// This is section is created by Taiwo Emmanuel +2348127984099, https://github.com/taiwoemmanuel/ 
+  retry_no.addEventListener('click', () => {
+    window.close();
+  })
+
+
 
   snake.unshift(newHead);
 
@@ -147,3 +167,4 @@ function draw() {
 
 // call draw function every 100 ms
 let game = setInterval(draw, 145);
+
